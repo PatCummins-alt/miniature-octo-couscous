@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pat Cummins Space Program</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        header {
+            background-color: #1a1a1a;
+            padding: 20px;
+        }
+        img.logo {
+            width: 150px; /* Adjust logo size */
+        }
+        h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+        h2 {
+            font-size: 1.8em;
+            margin-top: 20px;
+        }
+        .astronauts {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 20px;
+        }
+        .astronaut {
+            margin: 10px;
+            cursor: pointer;
+        }
+        .astronaut img {
+            width: 100px; /* Icon size */
+            height: 100px; /* Icon size */
+            border-radius: 50%;
+            transition: transform 0.2s;
+        }
+        .astronaut img:hover {
+            transform: scale(1.1); /* Scale on hover */
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.8);
+            padding-top: 60px;
+        }
+        .modal-content {
+            background-color: #333;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 500px;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: #fff;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        footer {
+            background-color: #1a1a1a;
+            padding: 10px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="your-logo-url.png" alt="Logo" class="logo">
+    <h1>Pat Cummins Space Program</h1>
+</header>
+
+<main>
+    <h2>Astronauts and Their Missions</h2>
+    <div class="astronauts">
+        <div class="astronaut" onclick="openModal('John Doe', 'Apollo 11', 'John was the commander of Apollo 11, the first mission to land humans on the Moon. His leadership and skills were critical to the mission's success.')">
+            <img src="https://via.placeholder.com/100" alt="John Doe">
+        </div>
+        <div class="astronaut" onclick="openModal('Jane Smith', 'STS-135', 'Jane flew on the final mission of NASA\'s Space Shuttle program, STS-135, serving as a mission specialist and contributing to significant research.')">
+            <img src="https://via.placeholder.com/100" alt="Jane Smith">
+        </div>
+        <div class="astronaut" onclick="openModal('Michael Johnson', 'Gemini 12', 'Michael was a pilot on Gemini 12 and completed multiple spacewalks, greatly advancing space exploration techniques.')">
+            <img src="https://via.placeholder.com/100" alt="Michael Johnson">
+        </div>
+        <div class="astronaut" onclick="openModal('Emily Davis', 'Space Shuttle Discovery', 'Emily participated in the STS-133 mission aboard Space Shuttle Discovery, helping to deliver and install the Express Logistics Carrier.')">
+            <img src="https://via.placeholder.com/100" alt="Emily Davis">
+        </div>
+        <div class="astronaut" onclick="openModal('Chris Williams', 'ISS Expedition 29', 'Chris served aboard the International Space Station during Expedition 29, contributing to vital research and experiments.')">
+            <img src="https://via.placeholder.com/100" alt="Chris Williams">
+        </div>
+        <div class="astronaut" onclick="openModal('Jessica Brown', 'Apollo 13', 'Jessica was part of the backup crew for Apollo 13, contributing to mission planning and training for the team.')">
+            <img src="https://via.placeholder.com/100" alt="Jessica Brown">
+        </div>
+    </div>
+</main>
+
+<footer>
+    <p>&copy; 2024 Pat Cummins Space Program. All rights reserved.</p>
+</footer>
+
+<!-- Modal -->
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h3 id="astronautName"></h3>
+        <p id="missionName"></p>
+        <p id="astronautDetails"></p>
+    </div>
+</div>
+
+<script>
+    function openModal(name, mission, details) {
+        document.getElementById('astronautName').innerText = name;
+        document.getElementById('missionName').innerText = `Mission: ${mission}`;
+        document.getElementById('astronautDetails').innerText = details;
+        document.getElementById('myModal').style.display = "block";
+    }
+
+    function closeModal() {
+        document.getElementById('myModal').style.display = "none";
+    }
+
+    window.onclick = function(event) {
+        if (event.target == document.getElementById('myModal')) {
+            closeModal();
+        }
+    }
+</script>
+
+</body>
+</html>
